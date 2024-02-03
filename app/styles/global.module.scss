@@ -1,0 +1,23 @@
+@import "./mixins";
+@import "./variables";
+
+.body {
+    background-color: black;
+}
+
+.navigation {
+    a::after {
+        content: "";
+        position: absolute;
+        @include size(100%, 3px);
+        bottom: 0px;
+        z-index: 5;
+        transition: 0.2s ease;
+    }
+    a.active::after, a.active:hover:after {
+        background-color: $white;
+    }
+    a:hover::after {
+        background-color: $white-05;
+    }
+}

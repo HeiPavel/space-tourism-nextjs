@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/placeholders";
+
+.header {
+    padding: 40px 0 0 55px;
+    @include flex(space-between, center);
+    height: 136px;
+    .nav {
+        position: relative;
+        height: 100%;
+        @include flex(center, stretch);
+        gap: 7%;
+        width: 65%;
+        font-family: $barlow-condensed;
+        a {
+            z-index: 5;
+            @extend %link-styles;
+            font-size: 0.9rem;
+        }
+    }
+    .blur::before {
+        content: "";
+        position: absolute;
+        @include size(100%, 100%);
+        background-color: $gray-transparent;
+        backdrop-filter: blur(15px);
+        z-index: 1;
+    }
+}

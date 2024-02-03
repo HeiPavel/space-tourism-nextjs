@@ -1,0 +1,13 @@
+%link-styles {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: $white;
+    letter-spacing: 2.7px;
+    font-weight: 300;
+    span {
+        font-weight: 700;
+    }
+}

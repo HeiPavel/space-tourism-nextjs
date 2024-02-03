@@ -1,0 +1,9 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.logo_container {
+    position: relative;
+    border-radius: 50%;
+    background-color: $white;
+    @include size(48px, 48px);        
+}
