@@ -7,6 +7,7 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <Logo/>
+            <div className={styles.line}></div>
             <nav className={`${styles.nav} ${styles.blur} ${globalStyles.navigation}`}>
                 <NavLinks/>
             </nav>

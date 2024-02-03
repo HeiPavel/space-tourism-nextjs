@@ -3,6 +3,7 @@
 
 .logo_container {
     position: relative;
+    flex-shrink: 0;
     border-radius: 50%;
     background-color: $white;
     @include size(48px, 48px);        

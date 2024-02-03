@@ -4,14 +4,23 @@
 
 .header {
     padding: 40px 0 0 55px;
-    @include flex(space-between, center);
+    @include flex(normal, center);
     height: 136px;
+    .line {
+        margin-left: 29px;
+        position: relative;
+        left: 30px;
+        flex: 1 1 auto;
+        height: 1px;
+        background-color: $light-gray;
+        z-index: 5;
+    }
     .nav {
         position: relative;
         height: 100%;
         @include flex(center, stretch);
-        gap: 7%;
-        width: 65%;
+        gap: 48px;
+        flex: 0 1 930px;
         font-family: $barlow-condensed;
         a {
             z-index: 5;
