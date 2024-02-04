@@ -1,7 +1,7 @@
 /*Fonts*/
-$bellefair: 'Bellefair', serif;
-$barlow: 'Barlow', sans-serif;
-$barlow-condensed: 'Barlow Condensed', sans-serif;
+$bellefair: var(--bellefair);
+$barlow: var(--barlow);
+$barlow-condensed: var(--barlow-condensed);
 
 /*Colors*/
 $white: rgb(255, 255, 255);

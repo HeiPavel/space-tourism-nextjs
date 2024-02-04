@@ -20,12 +20,11 @@
         height: 100%;
         @include flex(center, stretch);
         gap: 48px;
-        flex: 0 1 930px;
+        flex: 0 1 830px;
         font-family: $barlow-condensed;
         a {
             z-index: 5;
             @extend %link-styles;
-            font-size: 0.9rem;
         }
     }
     .blur::before {

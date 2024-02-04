@@ -9,18 +9,21 @@ import './styles/global.scss';
 const bellefair = Bellefair({
   subsets: ['latin'],
   weight: ['400'],
+  variable: '--bellefair',
   display: 'swap'
 });
 
 const barlow = Barlow({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
+  variable: '--barlow',
   display: 'swap'
 });
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
+  variable: '--barlow-condensed',
   display: 'swap'
 });
 
@@ -35,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${barlow.className} ${barlowCondensed.className} ${bellefair.className}`}>
+    <html lang="en" className={`${barlow.variable} ${barlowCondensed.variable} ${bellefair.variable}`}>
       <body>
         <Background/>
         <Header/>

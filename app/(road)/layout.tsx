@@ -1,6 +1,6 @@
 import { Title } from "../components/Title/Title";
 
-export default function RootLayout({
+export default function RoadLayout({
     children,
   }: Readonly<{
     children: React.ReactNode;
