@@ -3,7 +3,7 @@ import { Bellefair } from "next/font/google";
 import { Barlow } from "next/font/google";
 import { Barlow_Condensed } from "next/font/google";
 import { Header } from "./components/Header/Header";
-import styles from "./styles/global.module.scss";
+import { Background } from "./components/Background/Background";
 import './styles/global.scss';
 
 const bellefair = Bellefair({
@@ -36,7 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${barlow.className} ${barlowCondensed.className} ${bellefair.className}`}>
-      <body className={styles.body}>
+      <body>
+        <Background/>
         <Header/>
         <main>{children}</main>
       </body>

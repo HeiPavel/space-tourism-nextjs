@@ -1,10 +1,6 @@
 @import "./mixins";
 @import "./variables";
 
-.body {
-    background-color: black;
-}
-
 .navigation {
     a::after {
         content: "";
