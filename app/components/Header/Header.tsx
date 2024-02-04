@@ -1,5 +1,6 @@
 import { NavLinks } from "../NavLinks/NavLinks";
 import { Logo } from "../Logo/Logo";
+import { Sidebar } from "../Sidebar/Sidebar";
 import styles from "./header.module.scss";
 import globalStyles from "../../styles/global.module.scss"
 
@@ -8,9 +9,10 @@ export const Header = () => {
         <header className={styles.header}>
             <Logo/>
             <div className={styles.line}></div>
-            <nav className={`${styles.nav} ${styles.blur} ${globalStyles.navigation}`}>
-                <NavLinks/>
+            <nav className={`${styles.main_nav} ${globalStyles.blur} ${globalStyles.navigation}`}>
+                <NavLinks setOpen={null}/>
             </nav>
+            <Sidebar/>
         </header>
     );
 }

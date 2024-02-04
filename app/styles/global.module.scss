@@ -1,6 +1,7 @@
 @import "./mixins";
 @import "./variables";
 
+/*Shared nav underline and blur*/
 .navigation {
     a::after {
         content: "";
@@ -16,4 +17,13 @@
     a:hover::after {
         background-color: $white-05;
     }
+}
+
+.blur::before {
+    content: "";
+    position: absolute;
+    @include size(100%, 100%);
+    background-color: $gray-transparent;
+    backdrop-filter: blur(15px);
+    z-index: 1;
 }

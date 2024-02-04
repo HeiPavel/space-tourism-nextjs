@@ -1,0 +1,13 @@
+.sidebar {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .sidebar {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+}

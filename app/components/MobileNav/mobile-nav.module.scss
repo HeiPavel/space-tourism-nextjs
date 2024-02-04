@@ -1,0 +1,18 @@
+@import '../../styles/mixins';
+@import '../../styles/placeholders';
+
+.nav_mobile {
+    position: relative;
+    @include size(100%, 100%);
+    z-index: 7;
+    nav {
+        padding: 7.375rem 0 0 2rem;
+        @include flex(flex-start, flex-start, column);
+        gap: 2rem;
+    }
+    a {
+        font-family: $barlow-condensed;
+        z-index: 10;
+        @extend %link-styles;
+    }
+}

@@ -15,7 +15,7 @@
         background-color: $light-gray;
         z-index: 5;
     }
-    .nav {
+    .main_nav {
         position: relative;
         height: 100%;
         @include flex(center, stretch);
@@ -27,12 +27,36 @@
             @extend %link-styles;
         }
     }
-    .blur::before {
-        content: "";
-        position: absolute;
-        @include size(100%, 100%);
-        background-color: $gray-transparent;
-        backdrop-filter: blur(15px);
-        z-index: 1;
+}
+
+@media only screen and (max-width: 1024px) {
+    .header {
+        padding: 0 0 0 39px;
+        justify-content: space-between;
+        height: 96px;
+        .line {
+            display: none;
+        }
+        .main_nav {
+            flex-basis: 450px;
+            gap: 40px;
+            a {
+                font-size: 0.875rem;
+                letter-spacing: 2.36px;
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        height: unset;
+        padding: 1.5rem 1.5rem 0 1.5rem;
+        .main_nav {
+            display: none;
+        }
     }
 }
