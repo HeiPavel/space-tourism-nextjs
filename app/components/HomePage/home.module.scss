@@ -2,7 +2,8 @@
 @import "../../styles/mixins";
 
 .main_home {
-    padding-top: 251px;
+    min-height: calc(100vh - 136px);
+    @include flex(center, normal, column);
     .section_content {
         @include flex(space-around, flex-end);
     }
@@ -34,6 +35,7 @@
 @media only screen and (max-width: 1024px) {
     .main_home {
         padding-top: 106px;
+        justify-content: normal;
         .section_content {
             @include flex(space-around, center, column);
             gap: 153px;
@@ -63,6 +65,7 @@
 
 @media only screen and (max-width: 480px) {
     .main_home {
+        min-height: unset;
         padding-top: 48px;
         .section_content {
             min-height: 555px;
