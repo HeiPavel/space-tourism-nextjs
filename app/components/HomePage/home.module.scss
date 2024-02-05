@@ -1,0 +1,100 @@
+@import '../../styles/variables';
+@import "../../styles/mixins";
+
+.main_home {
+    padding-top: 251px;
+    .section_content {
+        @include flex(space-around, flex-end);
+    }
+    .home_text_content {
+        width: 450px;
+        h5 {
+            @include font($barlow-condensed, 1.75rem, $light-blue, 400, normal, 4.75px);
+        }
+        h1 {
+            margin: 1.5rem 0;
+            @include font($bellefair, 9.375rem, $white, 400);
+        }
+        p {
+            @include font($barlow, 1.125rem, $light-blue, 400, 1.8);
+            text-align: justify;
+        }
+    }
+    .explore {
+        @include size(274px, 274px);
+        border-radius: 50%;
+        border: none;
+        @include font($bellefair, 2rem, $active-link-color, 400, normal, 2px);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: 0.2s ease;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .main_home {
+        padding-top: 106px;
+        .section_content {
+            @include flex(space-around, center, column);
+            gap: 153px;
+        }
+        .home_text_content {
+            text-align: center;
+            h5 {
+                font-size: 1.25rem;
+                letter-spacing: 3.38px;
+            }
+            h1 {
+                margin: 1rem 0;
+            }
+            p {
+                margin: 0 auto;
+                max-width: 444px;
+                font-size: 1rem;
+                line-height: 1.7;
+                text-align: center;
+            }
+        }
+        .explore {
+            @include size(242px, 242px);
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main_home {
+        padding-top: 48px;
+        .section_content {
+            min-height: 555px;
+            justify-content: normal;
+            gap: 80px;
+        }
+        .home_text_content {
+            padding: 0 1.5rem;
+            width: 100%;
+            h5 {
+                font-size: 1rem;
+                letter-spacing: 2.7px;
+            }
+            h1 {
+                margin: 1rem 0;
+                font-size: 5rem;
+            }
+            p {
+                max-width: 320px;
+                font-size: 0.9375rem;
+            }
+        }
+        .explore {
+            @include size(150px, 150px);
+            font-size: 1.25rem;
+            letter-spacing: 1.25px;
+        }
+    }
+}
+
+@media (hover: hover) {
+    .explore:hover {
+        box-shadow: 0 0 0 88px $shadow-gray;
+    }
+}

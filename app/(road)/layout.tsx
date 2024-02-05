@@ -6,9 +6,9 @@ export default function RoadLayout({
     children: React.ReactNode;
   }>) {
     return (
-      <>
+      <main>
         <Title/>
         {children}
-      </>
+      </main>
     );
   }

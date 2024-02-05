@@ -42,7 +42,7 @@ export default function RootLayout({
       <body>
         <Background/>
         <Header/>
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );

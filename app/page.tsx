@@ -1,5 +1,7 @@
+import { HomePage } from "./components/HomePage/HomePage";
+
 export default function Home() {
-  return (
-    <h1>Space tourism</h1>
-  );
+    return (
+        <HomePage/>
+    );
 }
