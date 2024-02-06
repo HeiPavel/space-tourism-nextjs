@@ -6,7 +6,7 @@ import styles from './planet.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
 import { imageLoader } from "@/app/util/imageLoader";
-import { blurPlaceholder } from "@/app/util/urlData";
+import { planetPlaceholder } from "@/app/util/urlData";
 
 type Params = {
     params: {
@@ -19,8 +19,6 @@ export default function Page({params} : Params) {
     const {destination} = navigation;
     const {destinations} = data;
     const object = destinations[planet as keyof typeof destinations];
-    const placeholder = blurPlaceholder.destination;
-    const blurUrl = placeholder[planet as keyof typeof placeholder];
 
     return (
         <div className={styles.destination}>
@@ -35,7 +33,7 @@ export default function Page({params} : Params) {
                         priority={true}
                         quality={100}
                         placeholder="blur"
-                        blurDataURL={blurUrl}
+                        blurDataURL={planetPlaceholder}
                     />
                 </div>
                 <div className={styles.object_description}>
