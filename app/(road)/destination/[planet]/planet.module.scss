@@ -1,0 +1,117 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.destination {
+    padding: 97px 0 0 4rem;
+    display: flex;
+    .destination_card {
+        flex: 0 1 1047px;
+        @include flex(space-between);
+        .object_image {
+            position: relative;
+            @include size(445px, 445px);
+        }
+        .object_description {
+            width: 445px;
+            nav {
+                height: 34px;
+                @include flex(normal, stretch);
+                gap: 2.25rem;
+                a {
+                    position: relative;
+                    display: inline-flex;
+                    text-decoration: none;
+                    @include font($barlow-condensed, 1rem, $light-blue, 400, normal, 2.7px);
+                }
+            }
+            h3 {
+                margin-top: 37px;
+                @include font($bellefair, 6.25rem, $white, 400);
+                text-transform: uppercase;
+            }
+            .planet_description {
+                padding: 14px 0 52px 0;
+                border-bottom: 1px solid $light-gray;
+            }
+            .travel_statistic {
+                padding-top: 28px;
+                display: flex;
+                .statistic_container {
+                    flex-grow: 1;
+                    .label {
+                        @include font($barlow-condensed, 0.875rem, $light-blue, 400, normal, 2.36px);
+                    }
+                    .info {
+                        padding-top: 12px;
+                        @include font($bellefair, 1.75rem, $white);
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .destination {
+        padding: 60px 0 0 0;
+        .destination_card {
+            @include flex(normal, center, column);
+            gap: 53px;
+            .object_image {
+                @include size(300px, 300px);
+            }
+            .object_description {
+                width: 573px;
+                text-align: center;
+                nav {
+                    justify-content: center;
+                }
+                h3 {
+                    margin-top: 2rem;
+                    font-size: 5rem;
+                }
+                .planet_description {
+                    padding: 8px 0 49px 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .destination {
+        padding-top: 2rem;
+        min-height: 770px;
+        .destination_card {
+            gap: 1.625rem;
+            .object_image {
+                @include size(170px, 170px);
+            }
+            .object_description {
+                width: 100%;
+                nav {
+                    height: 1.75rem;
+                    gap: 1.6875rem;
+                    a {
+                        font-size: 0.875rem;
+                        letter-spacing: 2.36px;
+                    }
+                }
+                h3 {
+                    margin-top: 1.25rem;
+                    font-size: 3.5rem;
+                }
+                .planet_description {
+                    padding: 0 0 2rem 0;
+                    margin: 0 1.5rem;
+                }
+                .travel_statistic {
+                    padding-top: 2rem;
+                    @include flex(normal, center, column);
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+}

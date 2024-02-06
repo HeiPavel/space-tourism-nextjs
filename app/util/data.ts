@@ -61,15 +61,15 @@ export const data = {
 export const navigation = {
     main: [
         {path: ''},
-        {path: 'destination'},
-        {path: 'crew'},
-        {path: 'technology'}
+        {path: 'destination/moon'},
+        {path: 'crew/douglas-hurley'},
+        {path: 'technology/launch-vehicle'}
     ],
     destination: [
-        {path: '/destination/moon', content: 'MOON'}, 
-        {path: '/destination/mars', content: 'MARS'},
-        {path: '/destination/europa', content: 'EUROPA'},
-        {path: '/destination/titan', content: 'TITAN'}
+        {path: 'moon', content: 'MOON'}, 
+        {path: 'mars', content: 'MARS'},
+        {path: 'europa', content: 'EUROPA'},
+        {path: 'titan', content: 'TITAN'}
     ],
     crew: [
         {path: '/crew/douglas-hurley'},

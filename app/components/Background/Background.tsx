@@ -3,17 +3,9 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { imageLoader } from "@/app/util/imageLoader";
 
 type ScreenType = 'desktop' | 'tablet' | 'mobile';
-
-type imageProp = {
-    src: string,
-    quality?: number
-}
-
-const imageLoader = ({ src, quality }: imageProp) => {
-    return `${src}?q=${quality || 75}`;
-}
 
 export const Background = () => {
     const pathname = usePathname();

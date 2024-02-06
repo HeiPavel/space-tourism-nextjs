@@ -16,13 +16,12 @@ export const NavLinks = ({setOpen}: openProp | {setOpen: null}) => {
             return (
                 <>
                     {main.map((link, index) => 
-                        (<Link 
-                            className={path === link.path ? globalStyles.active : ''} 
+                        (<Link  
                             key={index} 
                             href={`/${link.path}`}
                             onClick={() => setOpen(false)}
                         >
-                            <span>{`0${index}`}</span>{link.path ? link.path.toUpperCase() : 'HOME'}
+                            <span>{`0${index}`}</span>{link.path ? link.path.split('/')[0].toUpperCase() : 'HOME'}
                         </Link>))}
                 </>
             );
@@ -31,11 +30,11 @@ export const NavLinks = ({setOpen}: openProp | {setOpen: null}) => {
                 <>
                     {main.map((link, index) => 
                         (<Link 
-                            className={path === link.path ? globalStyles.active : ''} 
+                            className={link.path.split('/')[0] === path ? globalStyles.active : ''} 
                             key={index} 
                             href={`/${link.path}`}
                         >
-                            <span>{`0${index}`}</span>{link.path ? link.path.toUpperCase() : 'HOME'}
+                            <span>{`0${index}`}</span>{link.path ? link.path.split('/')[0].toUpperCase() : 'HOME'}
                         </Link>))}
                 </>
             );
