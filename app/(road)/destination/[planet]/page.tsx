@@ -6,7 +6,6 @@ import styles from './planet.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
 import { imageLoader } from "@/app/util/imageLoader";
-import { planetPlaceholder } from "@/app/util/urlData";
 
 type Params = {
     params: {
@@ -32,8 +31,6 @@ export default function Page({params} : Params) {
                         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         priority={true}
                         quality={100}
-                        placeholder="blur"
-                        blurDataURL={planetPlaceholder}
                     />
                 </div>
                 <div className={styles.object_description}>
