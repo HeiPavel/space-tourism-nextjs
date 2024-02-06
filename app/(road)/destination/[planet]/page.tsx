@@ -6,6 +6,7 @@ import styles from './planet.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
 import { imageLoader } from "@/app/util/imageLoader";
+import { blurPlaceholder } from "@/app/util/urlData";
 
 type Params = {
     params: {
@@ -18,6 +19,8 @@ export default function Page({params} : Params) {
     const {destination} = navigation;
     const {destinations} = data;
     const object = destinations[planet as keyof typeof destinations];
+    const placeholder = blurPlaceholder.destination;
+    const blurUrl = placeholder[planet as keyof typeof placeholder];
 
     return (
         <div className={styles.destination}>
@@ -31,11 +34,20 @@ export default function Page({params} : Params) {
                         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         priority={true}
                         quality={100}
+                        placeholder="blur"
+                        blurDataURL={blurUrl}
                     />
                 </div>
                 <div className={styles.object_description}>
                     <nav className={globalStyles.navigation}>
-                        {destination.map((link, index) => (<Link className={link.path === planet ? globalStyles.active : ''} key={index} href={link.path}>{link.content}</Link>))}
+                        {destination.map((link, index) => (<Link 
+                                                                className={link.path === planet ? globalStyles.active : ''} 
+                                                                key={index} 
+                                                                href={link.path}
+                                                                scroll={false}
+                                                            >
+                                                                {link.content}
+                                                            </Link>))}
                     </nav>
                     <h3>{planet}</h3>
                     <p className={`${globalStyles.description} ${styles.planet_description}`}>{object.description}</p>

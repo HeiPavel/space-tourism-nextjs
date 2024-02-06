@@ -9,6 +9,8 @@
         @include flex(space-between);
         .object_image {
             position: relative;
+            border-radius: 50%;
+            overflow: hidden;
             @include size(445px, 445px);
         }
         .object_description {
