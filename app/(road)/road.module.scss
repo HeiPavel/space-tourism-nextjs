@@ -1,0 +1,11 @@
+@import '../styles/mixins';
+
+.road_main {
+    padding-top: 76px;
+    @include flex(center, normal);
+}
+
+.road_section {
+    padding-left: 166px;
+    flex: 0 1 1440px;
+}

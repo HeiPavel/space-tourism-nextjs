@@ -1,4 +1,5 @@
 import { Title } from "../components/Title/Title";
+import styles from './road.module.scss';
 
 export default function RoadLayout({
     children,
@@ -6,9 +7,11 @@ export default function RoadLayout({
     children: React.ReactNode;
   }>) {
     return (
-      <main>
-        <Title/>
-        {children}
+      <main className={styles.road_main}>
+          <section className={styles.road_section}>
+              <Title/>
+              {children}
+          </section>
       </main>
     );
   }

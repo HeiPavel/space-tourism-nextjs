@@ -83,3 +83,29 @@ export const navigation = {
         {path: '/technology/space-capsule'}
     ]
 }
+
+export type Location = {
+    id: string,
+    content: string
+}
+
+export type PageTitle = {
+    destination: Location,
+    crew: Location,
+    technology: Location
+}
+
+export const title: PageTitle = {
+    destination: {
+        id: '01',
+        content: 'PICK YOUR DESTINATION'
+    },
+    crew: {
+        id: '02',
+        content: 'MEET YOUR CREW'
+    },
+    technology: {
+        id: '03',
+        content: 'SPACE LAUNCH 101'
+    }
+}

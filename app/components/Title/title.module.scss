@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.page_title {
+    display: flex;
+    gap: 1.75rem;
+    @include font($barlow-condensed, 1.75rem, $white, 400, normal, 4.72px);
+    span {
+        font-weight: 700;
+        color: $span-color;
+    }
+}
