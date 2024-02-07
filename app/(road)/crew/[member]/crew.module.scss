@@ -1,0 +1,126 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.crew {
+    display: flex;
+    flex-grow: 1;
+    .crew_card {
+        flex: 0 1 1125px;
+        @include flex(space-between);
+        .crew_description {
+            padding-top: 120px;
+            height: 526px;
+            @include flex(space-between, flex-start, column);
+            flex: 1 0 auto;
+            .crew_role {
+                text-transform: uppercase;
+                @include font($bellefair, 2rem, $white-05);
+            }
+            .crew_name {
+                padding-top: 15px;
+                @include font($bellefair, 3.5rem, $white);
+                text-transform: uppercase;
+                word-break: keep-all;
+            }
+            .crew_bio {
+                padding-top: 27px;
+                max-width: 444px;
+            }
+            nav {
+                display: flex;
+                gap: 1.5rem;
+                a {
+                    @include size(15px, 15px);
+                    border-radius: 50%;
+                    background-color: $crew-link-color;
+                    transition: 0.2s ease;
+                }
+                a.active, a.active:hover {
+                    background-color: $white;
+                }
+            }
+        }
+        .person_image {
+            position: relative;
+            flex: 0 1 575px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .crew {
+        .crew_card {
+            flex: 1 0 auto;
+            @include flex(space-between, center, column);
+            .crew_description {
+                padding-top: 60px;
+                height: 296px;
+                align-items: center;
+                text-align: center;
+                flex: unset;
+                .crew_role {
+                    font-size: 1.5rem;
+                }
+                .crew_name {
+                    padding-top: 0.5rem;
+                    font-size: 2.5rem;
+                }
+                .crew_bio {
+                    padding-top: 1rem;
+                    max-width: 600px;
+                    text-wrap: balance;
+                }
+                nav {
+                    gap: 1rem;
+                    a {
+                        @include size(10px, 10px);
+                    }
+                }
+            }
+            .person_image {
+                flex: 0 0 532px;
+                width: 575px;
+                img {
+                    object-position: center bottom !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .crew {
+        padding-top: 2rem;
+        flex-grow: 0;
+        min-height: 622px;
+        .crew_card {
+            flex: unset;
+            padding: 0 1.5rem;
+            @include flex(flex-end, center, column-reverse);
+            .crew_description {
+                padding-top: 2rem;
+                height: unset;
+                flex-direction: column-reverse;
+                justify-content: normal;
+                .person_info {
+                    padding-top: 2rem;
+                }
+                .crew_role {
+                    font-size: 1rem;
+                }
+                .crew_name {
+                    font-size: 1.5rem;
+                }
+                .crew_bio {
+                    line-height: 1.7;
+                    text-wrap: unset;
+                }
+            }
+            .person_image {
+                flex-basis: 223px;
+                width: 100%;
+                border-bottom: 1px solid $light-gray;
+            }
+        }
+    }
+}

@@ -1,11 +1,14 @@
 @import '../styles/mixins';
 
 .road_main {
+    position: relative;
     padding-top: 76px;
+    min-height: calc(100vh - 136px);
     @include flex(center, normal);
 }
 
 .road_section {
+    @include flex(normal, normal, column);
     padding-left: 166px;
     flex: 0 1 1440px;
 }
@@ -13,10 +16,13 @@
 @media only screen and (max-width: 1024px) {
     .road_main {
         padding-top: 40px;
+        min-height: calc(100vh - 96px);
+        @include flex(normal, normal, column);
     }
 
     .road_section {
         padding-left: 0;
+        flex: 1 0 auto;
     }
 }
 

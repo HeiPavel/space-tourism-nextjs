@@ -42,7 +42,8 @@ export const data = {
             role: "Flight Engineer",
             bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space."
         }
-    }, technology: {
+    }, 
+    technology: {
         'launch-vehicle': {
             name: "Launch vehicle",
             description: "A launch vehicle or carrier rocket is a rocket‑propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe‑inspiring sight on the launch pad!"
@@ -72,10 +73,10 @@ export const navigation = {
         {path: 'titan', content: 'TITAN'}
     ],
     crew: [
-        {path: '/crew/douglas-hurley'},
-        {path: '/crew/mark-shuttleworth'},
-        {path: '/crew/victor-glover'},
-        {path: '/crew/anousheh-ansari'}
+        {path: 'douglas-hurley'},
+        {path: 'mark-shuttleworth'},
+        {path: 'victor-glover'},
+        {path: 'anousheh-ansari'}
     ],
     technology: [
         {path: '/technology/launch-vehicle'},
