@@ -40,6 +40,7 @@ export default function Page({params} : Params) {
                                                                 key={index} 
                                                                 href={link.path}
                                                                 scroll={false}
+                                                                prefetch={true}
                                                             >
                                                                 {link.content}
                                                             </Link>))}
