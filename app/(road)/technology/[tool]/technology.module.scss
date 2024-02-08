@@ -56,11 +56,13 @@
         flex-grow: unset;
         .technology_card {
             @include flex(normal, center, column-reverse);
+            .tool_image, .tool_image img {
+                aspect-ratio: 2.5;
+            }
             .tool_image {
                 padding-top: 60px;
                 flex: unset;
                 width: 100%;
-                aspect-ratio: 2.5;
             }
             .technology_text_content {
                 padding-top: 56px;
