@@ -65,7 +65,7 @@
 
 @media only screen and (max-width: 480px) {
     .main_home {
-        min-height: unset;
+        min-height: calc(100vh - 64px);
         padding-top: 48px;
         .section_content {
             min-height: 555px;

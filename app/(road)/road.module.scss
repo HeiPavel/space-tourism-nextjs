@@ -13,6 +13,12 @@
     flex: 0 1 1440px;
 }
 
+@media only screen and (max-width: 1280px) {
+    .road_section {
+        padding-left: 60px;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .road_main {
         padding-top: 40px;

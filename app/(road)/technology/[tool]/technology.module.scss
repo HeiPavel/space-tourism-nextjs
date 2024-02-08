@@ -1,0 +1,136 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.technology {
+    display: flex;
+    flex-grow: 1;
+    .technology_card {
+        flex-grow: 1;
+        @include flex(space-between);
+        .technology_text_content {
+            padding-top: 137px;
+            display: flex;
+            gap: 79px;
+            nav {
+                @include flex(normal, normal, column);
+                gap: 2rem;
+                a {
+                    @include flex(center, center);
+                    @include size(80px, 80px);
+                    text-decoration: none;
+                    border-radius: 50%;
+                    border: 1px solid $span-color;
+                    @include font($bellefair, 2rem, $white);
+                    transition: 0.2s ease;
+                }
+                a.active {
+                    background-color: $white;
+                    color: $active-link-color;
+                    border: none;
+                }
+            }
+            .tool_text_content {
+                .terminology {
+                    @include font($barlow-condensed, 1rem, $light-blue, 400, normal, 2.7px);
+                }
+                h3 {
+                    padding-top: 11px;
+                    text-transform: uppercase;
+                    @include font($bellefair, 3.5rem, $white, 400);
+                }
+                .tool_description {
+                    padding-top: 17px;
+                    max-width: 444px;
+                }
+            }
+        }
+        .tool_image {
+            position: relative;
+            flex: 0 1 515px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .technology {
+        flex-grow: unset;
+        .technology_card {
+            @include flex(normal, center, column-reverse);
+            .tool_image {
+                padding-top: 60px;
+                flex: unset;
+                width: 100%;
+            }
+            .technology_text_content {
+                padding-top: 56px;
+                @include flex(normal, center, column);
+                gap: 44px;
+                nav {
+                    flex-direction: row;
+                    gap: 1rem;
+                    a {
+                        @include size(60px, 60px);
+                        font-size: 1.5rem;
+                    }
+                }
+                .tool_text_content {
+                    text-align: center;
+                    h3 {
+                        padding-top: 1rem;
+                        font-size: 2.5rem;
+                    }
+                    .tool_description {
+                        padding-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .technology {
+        min-height: 622px;
+        .technology_card {
+            justify-content: flex-end;
+            .tool_image {
+                padding-top: 2rem;
+            }
+            .technology_text_content {
+                padding-top: 34px;
+                gap: 26px;
+                nav {
+                    a {
+                        @include size(40px, 40px);
+                        font-size: 1rem;
+                    }
+                }
+                .tool_text_content {
+                    padding: 0 1.5rem;
+                    .terminology {
+                        font-size: 0.875rem;
+                        letter-spacing: 2.36px;
+                    }
+                    h3 {
+                        padding-top: 9px;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (hover: hover) {
+    .technology {
+        .technology_card {
+            .technology_text_content {
+                nav {
+                    a:hover {
+                        border-color: $white;
+                    }
+                }
+            }
+        }
+    }         
+}
