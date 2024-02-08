@@ -39,7 +39,8 @@ export default function Page({params} : Params) {
                         </nav>
                     </div>
                     <div className={styles.person_image}>
-                        <Image 
+                        <Image
+                            className={globalStyles.visibility} 
                             loader={imageLoader}
                             src={`/assets/crew/image-${member}.webp`}
                             alt={`${member} image`}

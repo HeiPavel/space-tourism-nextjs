@@ -27,6 +27,7 @@ export default function Page({params}: Params) {
         return (
             <>
                 {imageOrientation ? <Image
+                                        className={globalStyles.visibility}
                                         loader={imageLoader}
                                         src={`/assets/technology/image-${tool}-${imageOrientation}.jpg`}
                                         alt='space tool'

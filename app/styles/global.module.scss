@@ -33,6 +33,11 @@
     @include font($barlow, 1.125rem, $light-blue, 400, 1.8);
 }
 
+/*Shared image animation*/
+.visibility {
+    animation: 0.5s ease-in visibility;
+}
+
 @media only screen and (max-width: 1024px) {
     .description {
         font-size: 1rem;
@@ -44,5 +49,14 @@
     .description {
         font-size: 0.9375rem;
         line-height: 1.67;
+    }
+}
+
+@keyframes visibility {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
     }
 }

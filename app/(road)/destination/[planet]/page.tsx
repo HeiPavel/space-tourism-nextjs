@@ -31,6 +31,7 @@ export default function Page({params} : Params) {
                         sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         priority={true}
                         quality={100}
+                        className={globalStyles.visibility}
                     />
                 </div>
                 <div className={styles.object_description}>
