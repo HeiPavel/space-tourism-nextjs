@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { ScreenContext } from "../layout";
 import Link from "next/link";
 import Image from "next/image";
 import styles from './technology.module.scss';
@@ -14,30 +15,36 @@ type Params = {
     }
 }
 
-type ImageOrientation = 'landscape' | 'portrait';
-
 export default function Page({params}: Params) {
-    const [imageOrientation, setImageOrientation] = useState<ImageOrientation>('portrait');
+    const imageOrientation = useContext(ScreenContext);
 
     const {tool} = params;
     const {technologys} = data;
     const {technology} = navigation;
     const toolInfo = technologys[tool as keyof typeof technologys];
 
-    useEffect(() => {
-        const matchDevice = [window.matchMedia("(width <= 1024px)"), window.matchMedia("(1024px < width)")];
-        const detectDeviceSize = (): ImageOrientation => {
-            return matchDevice[0].matches ? 'landscape' : 'portrait';
-        };
-        const handleChange = (event: MediaQueryListEvent) => {
-            if (event.matches) setImageOrientation(detectDeviceSize());
-        };
-        setImageOrientation(detectDeviceSize());
-        matchDevice.forEach(match => match.addEventListener('change', handleChange));
-        return () => {
-            matchDevice.forEach(match => match.removeEventListener('change', handleChange));
-        }
-    }, []);
+    const image = () => {
+        return (
+            <>
+                {imageOrientation ? <Image
+                                        loader={imageLoader}
+                                        src={`/assets/technology/image-${tool}-${imageOrientation}.jpg`}
+                                        alt='space tool'
+                                        width={50}
+                                        height={50}
+                                        sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        priority={true}
+                                        quality={100}
+                                        style={{
+                                            width: '100%',
+                                            height: 'auto',
+                                            verticalAlign: 'middle'
+                                        }}
+                                    /> : []
+                }
+            </>
+        );
+    }
 
     return (
         <div className={styles.technology}>
@@ -59,21 +66,7 @@ export default function Page({params}: Params) {
                     </div>
                 </div>
                 <div className={styles.tool_image}>
-                    <Image
-                        loader={imageLoader}
-                        src={`/assets/technology/image-${tool}-${imageOrientation}.jpg`}
-                        alt='spave tool'
-                        width={50}
-                        height={50}
-                        sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        priority={true}
-                        quality={100}
-                        style={{
-                            width: '100%',
-                            height: 'auto',
-                            verticalAlign: 'middle'
-                        }}
-                    />
+                    {image()}
                 </div>
             </article>
         </div>
