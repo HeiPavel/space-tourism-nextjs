@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext } from "react";
-import { ScreenContext } from "../layout";
+import { ScreenContext } from "@/app/components/Context/Context";
 import Link from "next/link";
 import Image from "next/image";
 import styles from './technology.module.scss';

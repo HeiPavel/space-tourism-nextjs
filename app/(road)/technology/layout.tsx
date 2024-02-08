@@ -1,11 +1,7 @@
 'use client';
 
-import { useState, useEffect, createContext, ReactNode } from "react";
-
-type ImageOrientation = 'landscape' | 'portrait' | null;
-
-
-export const ScreenContext = createContext<ImageOrientation>('portrait');
+import { useState, useEffect, ReactNode } from "react";
+import { ScreenContext, ImageOrientation } from "@/app/components/Context/Context";
 
 export default function TechnologyLayout({
     children,
