@@ -51,6 +51,16 @@
     }
 }
 
+@media only screen and (max-width: 1280px) {
+    .technology {
+        .technology_card {
+            .technology_text_content {
+                gap: 44px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .technology {
         flex-grow: unset;
@@ -67,7 +77,6 @@
             .technology_text_content {
                 padding-top: 56px;
                 @include flex(normal, center, column);
-                gap: 44px;
                 nav {
                     flex-direction: row;
                     gap: 1rem;

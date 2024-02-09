@@ -52,6 +52,7 @@
         .crew_card {
             flex: 1 0 auto;
             @include flex(space-between, center, column);
+            gap: 2rem;
             .crew_description {
                 padding-top: 60px;
                 height: 296px;
@@ -95,6 +96,7 @@
         min-height: 622px;
         .crew_card {
             flex: unset;
+            gap: unset;
             padding: 0 1.5rem;
             @include flex(flex-end, center, column-reverse);
             .crew_description {
