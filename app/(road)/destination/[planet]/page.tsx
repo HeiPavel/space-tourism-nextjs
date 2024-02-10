@@ -1,11 +1,8 @@
-'use client';
-
 import Link from "next/link";
-import Image from "next/image";
 import styles from './planet.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
-import { imageLoader } from "@/app/util/imageLoader";
+import { SharedImage } from "@/app/components/SharedImage/SharedImage";
 
 type Params = {
     params: {
@@ -23,8 +20,7 @@ export default function Page({params} : Params) {
         <div className={styles.destination}>
             <article className={styles.destination_card}>
                 <div className={styles.object_image}>
-                    <Image
-                        loader={imageLoader}
+                    <SharedImage
                         src={`/assets/destination/image-${planet}.webp`}
                         alt={`${planet} image`}
                         fill={true}

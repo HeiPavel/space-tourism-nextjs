@@ -3,11 +3,10 @@
 import { useContext } from "react";
 import { ScreenContext } from "@/app/components/Context/Context";
 import Link from "next/link";
-import Image from "next/image";
 import styles from './technology.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
-import { imageLoader } from "@/app/util/imageLoader";
+import { SharedImage } from "@/app/components/SharedImage/SharedImage";
 
 type Params = {
     params: {
@@ -26,9 +25,8 @@ export default function Page({params}: Params) {
     const image = () => {
         return (
             <>
-                {imageOrientation ? <Image
+                {imageOrientation ? <SharedImage
                                         className={globalStyles.visibility}
-                                        loader={imageLoader}
                                         src={`/assets/technology/image-${tool}-${imageOrientation}.jpg`}
                                         alt='space tool'
                                         width={50}

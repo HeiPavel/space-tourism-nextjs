@@ -1,11 +1,8 @@
-'use client';
-
 import Link from "next/link";
-import Image from "next/image";
 import styles from './crew.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
-import { imageLoader } from "@/app/util/imageLoader";
+import { SharedImage } from "@/app/components/SharedImage/SharedImage";
 
 type Params = {
     params: {
@@ -39,9 +36,8 @@ export default function Page({params} : Params) {
                         </nav>
                     </div>
                     <div className={styles.person_image}>
-                        <Image
+                        <SharedImage
                             className={globalStyles.visibility} 
-                            loader={imageLoader}
                             src={`/assets/crew/image-${member}.webp`}
                             alt={`${member} image`}
                             fill={true}
