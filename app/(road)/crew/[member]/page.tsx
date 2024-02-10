@@ -3,10 +3,19 @@ import styles from './crew.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
 import { SharedImage } from "@/app/components/SharedImage/SharedImage";
+import { Metadata } from "next";
+import { capitalizeAll } from "@/app/util/capitalize";
 
 type Params = {
     params: {
         member: string
+    }
+}
+
+export async function generateMetadata({params} : Params): Promise<Metadata> {
+    let {member} = params;
+    return {
+        title: `Crew | ${capitalizeAll(member)}`
     }
 }
 

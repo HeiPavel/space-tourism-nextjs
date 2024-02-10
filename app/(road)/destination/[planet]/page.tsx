@@ -3,10 +3,19 @@ import styles from './planet.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
 import { SharedImage } from "@/app/components/SharedImage/SharedImage";
+import { Metadata } from "next";
+import { capitalize } from "@/app/util/capitalize";
 
 type Params = {
     params: {
         planet: string
+    }
+}
+
+export async function generateMetadata({params} : Params): Promise<Metadata> {
+    let {planet} = params;
+    return {
+        title: `Destination | ${capitalize(planet)}`
     }
 }
 

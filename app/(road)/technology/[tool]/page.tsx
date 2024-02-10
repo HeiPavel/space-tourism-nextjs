@@ -3,10 +3,19 @@ import styles from './technology.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
 import { ToolImage } from "@/app/components/ToolImage/ToolImage";
+import { Metadata } from "next";
+import { capitalizeAll } from "@/app/util/capitalize";
 
 type Params = {
     params: {
         tool: string
+    }
+}
+
+export async function generateMetadata({params} : Params): Promise<Metadata> {
+    let {tool} = params;
+    return {
+        title: `Technology | ${capitalizeAll(tool)}`
     }
 }
 
