@@ -1,12 +1,8 @@
-'use client';
-
-import { useContext } from "react";
-import { ScreenContext } from "@/app/components/Context/Context";
 import Link from "next/link";
 import styles from './technology.module.scss';
 import globalStyles from '../../../styles/global.module.scss';
 import { data, navigation } from "@/app/util/data";
-import { SharedImage } from "@/app/components/SharedImage/SharedImage";
+import { ToolImage } from "@/app/components/ToolImage/ToolImage";
 
 type Params = {
     params: {
@@ -15,35 +11,10 @@ type Params = {
 }
 
 export default function Page({params}: Params) {
-    const imageOrientation = useContext(ScreenContext);
-
     const {tool} = params;
     const {technologys} = data;
     const {technology} = navigation;
     const toolInfo = technologys[tool as keyof typeof technologys];
-
-    const image = () => {
-        return (
-            <>
-                {imageOrientation ? <SharedImage
-                                        className={globalStyles.visibility}
-                                        src={`/assets/technology/image-${tool}-${imageOrientation}.jpg`}
-                                        alt='space tool'
-                                        width={50}
-                                        height={50}
-                                        sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                        priority={true}
-                                        quality={100}
-                                        style={{
-                                            width: '100%',
-                                            height: 'auto',
-                                            verticalAlign: 'middle'
-                                        }}
-                                    /> : []
-                }
-            </>
-        );
-    }
 
     return (
         <div className={styles.technology}>
@@ -65,7 +36,21 @@ export default function Page({params}: Params) {
                     </div>
                 </div>
                 <div className={styles.tool_image}>
-                    {image()}
+                                    <ToolImage
+                                        className={globalStyles.visibility}
+                                        tool={tool}
+                                        alt='space tool'
+                                        width={50}
+                                        height={50}
+                                        sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        priority={true}
+                                        quality={100}
+                                        style={{
+                                            width: '100%',
+                                            height: 'auto',
+                                            verticalAlign: 'middle'
+                                        }}
+                                    />
                 </div>
             </article>
         </div>
