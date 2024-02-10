@@ -37,19 +37,7 @@ export default function Page({params}: Params) {
                 </div>
                 <div className={styles.tool_image}>
                                     <ToolImage
-                                        className={globalStyles.visibility}
                                         tool={tool}
-                                        alt='space tool'
-                                        width={50}
-                                        height={50}
-                                        sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                        priority={true}
-                                        quality={100}
-                                        style={{
-                                            width: '100%',
-                                            height: 'auto',
-                                            verticalAlign: 'middle'
-                                        }}
                                     />
                 </div>
             </article>

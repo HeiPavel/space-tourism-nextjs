@@ -2,24 +2,32 @@
 
 import { SharedImage } from "../SharedImage/SharedImage";
 import { useScreenSize } from "../useScreenSize/useScreenSize";
-import { ImageProps } from "next/image";
+import globalStyles from '../../styles/global.module.scss';
 
-type ToolImageProps = Omit<ImageProps, 'src'> & {tool: string};
-
-export const ToolImage = (props: ToolImageProps) => {
-    const {tool, ...rest} = props;
+export const ToolImage = ({tool} : {tool: string}) => {
     const orientations = {
         landscape: "(width <= 1024px)",
         portrait: "(1024px < width)"
     }
 
-    const imageOrientation = useScreenSize(orientations);
+    const imageOrientation = useScreenSize({devices: orientations, defaultValue: null});
 
     return (
         <>
             {imageOrientation ? <SharedImage
                                     src={`/assets/technology/image-${tool}-${imageOrientation}.jpg`}
-                                    {...rest}
+                                    className={globalStyles.visibility}
+                                    alt='space tool'
+                                    width={50}
+                                    height={50}
+                                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    priority={true}
+                                    quality={100}
+                                    style={{
+                                            width: '100%',
+                                            height: 'auto',
+                                            verticalAlign: 'middle'
+                                    }}
                                 /> : []
             }
         </>

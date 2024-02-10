@@ -15,23 +15,21 @@ export const Background = () => {
         desktop: "(1024px < width)"
     }
 
-    const screenType = useScreenSize(devices);
+    const screenType = useScreenSize({devices, defaultValue: 'desktop'});
 
     return (
-        <>
-            {screenType ? <Image
-                loader={imageLoader} 
-                src={`/assets/${path}/background-${path}-${screenType}.jpg`}
-                alt="background-image"
-                fill={true}
-                sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                quality={100}
-                priority={true}
-                style={{
-                    objectFit: 'cover',
-                    zIndex: '-1'
-                }}
-            /> : []}
-        </>
-    );
+        <Image
+            loader={imageLoader} 
+            src={`/assets/${path}/background-${path}-${screenType}.jpg`}
+            alt="background-image"
+            fill={true}
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality={100}
+            priority={true}
+            style={{
+                objectFit: 'cover',
+                zIndex: '-1'
+            }}
+        />
+    )
 }

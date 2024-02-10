@@ -8,8 +8,13 @@ type DeviceType = {
     [key: string]: string
 }
 
-export const useScreenSize = (devices: DeviceType) => {
-    const [screenType, setScreenType] = useState<ScreenType>(null);
+type PropsType = {
+    devices: DeviceType,
+    defaultValue: ScreenType
+}
+
+export const useScreenSize = ({devices, defaultValue}: PropsType) => {
+    const [screenType, setScreenType] = useState<ScreenType>(defaultValue);
 
     useEffect(() => {
         const matchDevice: {[key: string]: MediaQueryList} = {};
