@@ -3,7 +3,7 @@
 .road_main {
     position: relative;
     padding-top: 76px;
-    min-height: calc(100vh - 136px);
+    min-height: max(calc(100vh - 136px), 720px);
     @include flex(center, normal);
 }
 
